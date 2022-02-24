@@ -8,9 +8,9 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - checkout:
-          path: "microserver-comments/"
-      - run: npm install
+      - checkout
+      - run: ls -l
+#      - run: npm install
 #      - run:
 #          working_directory: ~/microserver-comments/microserver-nest
 #          command: npm install
