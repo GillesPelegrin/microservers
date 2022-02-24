@@ -3,10 +3,7 @@ import * as request from 'supertest';
 
 export default abstract class TestClient {
 
-    private app;
-
-    constructor(app) {
-        this.app = app;
+    protected constructor(private app: any) {
     }
 
     protected async getWithAuthentication<D>(url: string): Promise<D[]> {

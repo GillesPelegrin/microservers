@@ -13,12 +13,14 @@ export class CommentService {
         private commentMapper: CommentMapper) {
     }
 
-    getComments(): Promise<Comment[]> {
-       return this.commentRepository.find();
+    async getComments(): Promise<CommentDto[]> {
+        const comments: Comment[] = await this.commentRepository.find();
+        return comments.map(comment => this.commentMapper.mapToCommentDTO(comment));
     }
 
-    createComment(commentDto: CommentDto): Promise<Comment> {
-       return this.commentRepository.save(this.commentMapper.mapToComment(commentDto));
+    async createComment(commentDto: CommentDto): Promise<CommentDto> {
+       const comment: Comment = await this.commentRepository.save(this.commentMapper.mapToComment(commentDto));
+        return this.commentMapper.mapToCommentDTO(comment);
     }
 
     // updateComment(commentDto: CommentDto): Promise<Comment> {

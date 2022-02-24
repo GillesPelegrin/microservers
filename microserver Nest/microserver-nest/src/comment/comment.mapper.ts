@@ -8,4 +8,10 @@ export class CommentMapper {
     mapToComment(commentDTO: CommentDto): Comment {
         return new Comment(commentDTO.description);
     }
+
+    mapToCommentDTO(comment: Comment): CommentDto {
+        return {
+            description: comment.description
+        } as CommentDto;
+    }
 }

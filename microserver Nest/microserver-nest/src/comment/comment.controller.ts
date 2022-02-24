@@ -9,19 +9,18 @@ export class CommentController {
   constructor(private readonly commentService: CommentService) {}
 
   @Get('/comments')
-  getAllComments(): Promise<Comment[]> {
+  getAllComments(): Promise<CommentDto[]> {
     return this.commentService.getComments();
   }
 
   @Post('/comments')
-  createComment(@Body('comment') commentDTO: CommentDto): Promise<Comment> {
-    console.log(commentDTO);
+  createComment(@Body() commentDTO: CommentDto): Promise<CommentDto> {
     return this.commentService.createComment(commentDTO);
   }
 
   @Put('/comments/:commentId')
   updateComment(@Param('commentId') commentId: string,
-                @Body('comment') commentDTO: CommentDto): string {
+                @Body() commentDTO: CommentDto): string {
     return "response"
   }
 
