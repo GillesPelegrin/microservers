@@ -9,7 +9,7 @@ jobs:
     working_directory: ~/microservers/microserver-comments/microserver-nest
     steps:
       - checkout
-      - run: ls -l
+      - run: pwd && ls -l
 #      - run: npm install
       -  run:
             working_directory: ~/microservers/microserver-comments/microserver-nest
