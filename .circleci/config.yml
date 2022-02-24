@@ -8,5 +8,5 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
-      path: './microserver\ Nest/microserver-nest/'
+      path: "./microserver\ Nest/microserver-nest/"
       - run: pwd
