@@ -12,7 +12,7 @@ jobs:
       - run: pwd && ls -l
 #      - run: npm install
       -  run:
-            working_directory: ~/microservers/microserver-comments/microserver-nest
+            working_directory: ~/project/microserver-comments/microserver-nest
             command: pwd && ls -l
 #      - run:
 #          working_directory: ~/microservers/microserver-comments/microserver-nest
