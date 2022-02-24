@@ -8,5 +8,5 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout:
-          path: "/microserver-comments/"
+          path: "microserver-comments/"
       - run: ls
