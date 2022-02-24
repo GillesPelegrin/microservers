@@ -11,6 +11,6 @@ jobs:
       - checkout
       - run: ls -l
 #      - run: npm install
-#      - run:
-#          working_directory: ~/microserver-comments/microserver-nest
-#          command: npm install
+      - run:
+          working_directory: ~/microserver-comments/microserver-nest
+          command: npm install
