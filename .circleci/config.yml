@@ -10,6 +10,7 @@ jobs:
     steps:
       - checkout:
           path: "microserver-comments/"
-      - run:
-          working_directory: ~/microserver-comments/microserver-nest
-          command: npm install
+      - run: npm install
+#      - run:
+#          working_directory: ~/microserver-comments/microserver-nest
+#          command: npm install
