@@ -13,5 +13,5 @@ jobs:
       - run: cd microserver-comments && ls
       - run: ls
       - run:
-          working_directory: /microserver-comments
+          working_directory: ~/microserver-comments
           command: pwd
