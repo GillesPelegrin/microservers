@@ -11,5 +11,9 @@ export class Comment {
 
     constructor(description: string) {
         this.description = description;
+
+        if(this.description == undefined) {
+            throw Error("description should not be undefined")
+        }
     }
 }
