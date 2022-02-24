@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-
+    working_directory: ~/microserver-comments/microserver-nest
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
         auth:
@@ -11,7 +11,7 @@ jobs:
       - checkout:
           path: "microserver-comments/"
       - run: cd microserver-comments && ls
-      - run: ls
-      - run:
-          working_directory: ~/microserver-comments/microserver-nest
-          command: pwd
+      - run: pwd
+#      - run:
+#          working_directory: ~/microserver-comments/microserver-nest
+#          command: pwd
