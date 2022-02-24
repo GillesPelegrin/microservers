@@ -10,7 +10,6 @@ jobs:
     steps:
       - checkout
       - run: pwd && ls -l
-      - run: npm install
       -  run:
             working_directory: ~/project/microserver-comments/microserver-nest
             command: npm install
