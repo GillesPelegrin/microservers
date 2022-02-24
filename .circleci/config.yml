@@ -1,6 +1,7 @@
 version: 2.1
 jobs:
   build:
+    working_directory: ~/microserver-comments/
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
         auth:
