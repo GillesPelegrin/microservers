@@ -8,5 +8,5 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout:
-      - run: "cd /microserver-comments/microserver-nest/"
+      - run: cd microserver-comments/microserver-nest/
       - run: ls
