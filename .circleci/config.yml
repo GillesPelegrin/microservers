@@ -12,7 +12,7 @@ jobs:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm install
       - save_cache: # Caches dependencies with a cache key
-          key: node-modules
+          key: node-modules2
           paths:
             - ~/project/microserver-comments/microserver-nest/node_modules
 
@@ -24,7 +24,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - restore_cache: # Restores the cached dependency.
-          key: node-modules
+          key: node-modules2
       - checkout
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
