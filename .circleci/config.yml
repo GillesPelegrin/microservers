@@ -25,7 +25,6 @@ jobs:
     steps:
       - restore_cache: # Restores the cached dependency.
           key: node-modules2
-      - checkout
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm run test
