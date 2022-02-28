@@ -14,7 +14,7 @@ jobs:
       - save_cache: # Caches dependencies with a cache key
           key: node-modules
           paths:
-            - node_modules
+            - ~/project/microserver-comments/microserver-nest/node_modules
 
   test:
     docker:
