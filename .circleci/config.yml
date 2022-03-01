@@ -16,19 +16,19 @@ jobs:
           paths:
             - ~/project/microserver-comments/microserver-nest/node_modules
 
-#  test:
-#    docker:
-#      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
-#        auth:
-#          username: mydockerhub-user
-#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-#    steps:
-#      - checkout
-#      - restore_cache: # Restores the cached dependency.
-#          key: node-modules
-#      - run:
-#          working_directory: ~/project/microserver-comments/microserver-nest
-#          command: npm run test
+  test:
+    docker:
+      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - restore_cache: # Restores the cached dependency.
+          key: node-modules
+      - run:
+          working_directory: ~/project/microserver-comments/microserver-nest
+          command: npm run test
 
 
   e2e:
@@ -62,9 +62,9 @@ workflows:
   workflowName: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build
-#      - test:
-#          requires:
-#            - build
+      - test:
+          requires:
+            - build
       - e2e:
           requires:
             - build
