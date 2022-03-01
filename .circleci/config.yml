@@ -37,10 +37,10 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-      - image: circleci/mongo:3.6
-        environment:
-          - MONGODB_USERNAME: root
-          - MONGODB_PASSWORD: rootpassword
+      - image: mongo:4.2
+        auth:
+          username: root
+          password: rootpassword  # context / project UI env-var reference
     steps:
       - checkout
       - restore_cache: # Restores the cached dependency.
