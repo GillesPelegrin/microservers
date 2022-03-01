@@ -47,7 +47,7 @@ jobs:
           key: node-modules2
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
-          command: npm run test:e2e
+          command: npm run test
 
 workflows:
   version: 2.1
