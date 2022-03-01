@@ -12,7 +12,7 @@ jobs:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm install
       - save_cache: # Caches dependencies with a cache key
-          key: node-modules
+          key: node-modules2
           paths:
             - ~/project/microserver-comments/microserver-nest/node_modules
 
@@ -44,7 +44,7 @@ jobs:
     steps:
       - checkout
       - restore_cache: # Restores the cached dependency.
-          key: node-modules
+          key: node-modules2
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm run test
