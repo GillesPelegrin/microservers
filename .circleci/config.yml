@@ -55,7 +55,7 @@ jobs:
           command: dockerize -wait tcp://localhost:27017 -timeout 1m
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
-          command: npm run test
+          command: npm run test:e2e
 
 workflows:
   version: 2.1
