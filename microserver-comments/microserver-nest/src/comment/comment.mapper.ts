@@ -6,7 +6,9 @@ import {CommentDto} from './comment.dto';
 export class CommentMapper {
 
     mapToComment(commentDTO: CommentDto): Comment {
-        return new Comment(commentDTO.description);
+        const comment = new Comment();
+        comment.create(commentDTO.description);
+        return comment;
     }
 
     mapToCommentDTO(comment: Comment): CommentDto {

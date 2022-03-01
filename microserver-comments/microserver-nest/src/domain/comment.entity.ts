@@ -9,11 +9,11 @@ export class Comment {
     @Column()
     description: string;
 
-    constructor(description: string) {
+    public create(description: string): void {
         this.description = description;
 
-        // if(this.description == undefined) {
-        //     throw Error("description should not be undefined")
-        // }
+        if(this.description == undefined) {
+            throw Error("description should not be undefined")
+        }
     }
 }
