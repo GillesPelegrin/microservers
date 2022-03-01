@@ -11,7 +11,7 @@
 #### CI/CD 
 
 - [ ] Create Pipeline in CircleCi
-  - [ ] run unit test
+  - [x] run unit test
   - [ ] run e2e test -> which means you need to setup the DB in tests
   - [ ] run lint
   - [ ] run everything in parallel

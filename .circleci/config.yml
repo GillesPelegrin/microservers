@@ -12,20 +12,39 @@ jobs:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm install
       - save_cache: # Caches dependencies with a cache key
-          key: node-modules2
+          key: node-modules
           paths:
             - ~/project/microserver-comments/microserver-nest/node_modules
 
-  test:
+#  test:
+#    docker:
+#      - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
+#        auth:
+#          username: mydockerhub-user
+#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+#    steps:
+#      - checkout
+#      - restore_cache: # Restores the cached dependency.
+#          key: node-modules
+#      - run:
+#          working_directory: ~/project/microserver-comments/microserver-nest
+#          command: npm run test
+
+
+  e2e:
     docker:
       - image: cimg/node:17.2.0 # the primary container, where your job's commands are run
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: circleci/mongo:3.6
+        environment:
+          - MONGODB_USERNAME: root
+          - MONGODB_PASSWORD: rootpassword
     steps:
       - checkout
       - restore_cache: # Restores the cached dependency.
-          key: node-modules2
+          key: node-modules
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm run test
@@ -35,6 +54,9 @@ workflows:
   workflowName: # this is the name of our workflow
     jobs: # and here we list the jobs we are going to run.
       - build
-      - test:
+#      - test:
+#          requires:
+#            - build
+      - e2e:
           requires:
             - build
