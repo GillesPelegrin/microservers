@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  wait-for: cobli/wait-for@1.0.0
 jobs:
   build:
     docker:
@@ -43,8 +45,11 @@ jobs:
           MONGO_INITDB_ROOT_PASSWORD: rootpassword
     steps:
       - checkout
+      - wait-for/mongo
       - restore_cache: # Restores the cached dependency.
           key: node-modules2
+
+
       - run:
           working_directory: ~/project/microserver-comments/microserver-nest
           command: npm run test
